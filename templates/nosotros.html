@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}Conocé NovaLabs{% endblock %}
+{% block page %}
+<section class="page-container">
+  <div class="page-heading"><p class="eyebrow">NOVALABS · IDEAS QUE FUNCIONAN</p><h1>De Hurlingham a tu próximo proyecto.</h1><p class="lead">NovaLabs es el proyecto de desarrollo de software de Gregorio. Un espacio para construir páginas, sistemas y automatizaciones junto a personas que quieren hacer crecer su negocio.</p></div>
+  <div class="info-grid">
+    <article class="info-card"><span class="number">01</span><h2>Conversamos</h2><p>Nos contás qué hacés, qué necesitás y qué te gustaría mejorar.</p></article>
+    <article class="info-card"><span class="number">02</span><h2>Definimos</h2><p>Ordenamos las prioridades y acordamos el alcance del trabajo, el presupuesto y las etapas.</p></article>
+    <article class="info-card"><span class="number">03</span><h2>Construimos</h2><p>Desarrollamos, revisamos con vos y preparamos la entrega para que puedas usar tu solución.</p></article>
+  </div>
+  <div class="info-strip"><div><h2>Trato directo. Ideas claras.</h2><p>Podemos empezar con una conversación sobre tu negocio.</p></div><a class="btn-cta-blue" href="{{ url_for('contacto') }}">Hablemos {{ icon('arrow') }}</a></div>
+</section>
+{% endblock %}

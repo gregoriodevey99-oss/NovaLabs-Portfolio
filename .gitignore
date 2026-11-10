@@ -1,0 +1,9 @@
+.venv/
+instance/
+__pycache__/
+*.py[cod]
+.env
+.git/
+.pytest_cache/
+.DS_Store
+Thumbs.db

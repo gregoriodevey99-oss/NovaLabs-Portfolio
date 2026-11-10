@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% from "macros.html" import icon, logo, feature %}
+{% block content %}
+<div class="site-wrapper" id="inicio">
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="{{ url_for('inicio') }}" class="brand-link" aria-label="NovaLabs, inicio">{{ logo() }}</a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        {% for key, label, endpoint in [('inicio','Inicio','inicio'),('productos','Productos','productos_pagina'),('soluciones','Soluciones','soluciones'),('nosotros','Nosotros','nosotros'),('contacto','Contacto','contacto')] %}
+        <a href="{{ url_for(endpoint) }}" {% if activo == key %}class="active" aria-current="page"{% endif %}>{{ label }}</a>
+        {% endfor %}
+      </nav>
+      <a href="{{ url_for('contacto') }}" class="btn-cta-blue nav-cta">Solicitar presupuesto {{ icon('arrow') }}</a>
+    </div>
+  </header>
+  <main id="contenido">
+    {% block page %}{% endblock %}
+  </main>
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="{{ url_for('inicio') }}" class="brand-link" aria-label="NovaLabs, inicio">{{ logo() }}</a>
+        <p>Desarrollamos software para un futuro más simple, más inteligente y más humano.</p>
+        <div class="social-icons">
+          {% for red, etiqueta in [('instagram','Instagram'),('linkedin','LinkedIn'),('github','GitHub'),('youtube','YouTube')] %}
+          {% if negocio[red] %}<a href="{{ negocio[red] }}" target="_blank" rel="noopener noreferrer" aria-label="NovaLabs en {{ etiqueta }} (abre otra pestaña)">{{ icon(red) }}</a>{% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Navegación</h4>
+        <a href="{{ url_for('inicio') }}">Inicio</a><a href="{{ url_for('soluciones') }}">Soluciones</a><a href="{{ url_for('nosotros') }}">Nosotros</a><a href="{{ url_for('contacto') }}">Contacto</a>
+      </div>
+      <div class="footer-column">
+        <h4>Productos</h4>
+        {% for slug, producto in productos.items() %}<a href="{{ url_for('producto',slug=slug) }}">{{ producto.nombre }}</a>{% endfor %}
+        <a href="{{ url_for('productos_pagina') }}">Todos los productos</a>
+      </div>
+      <div class="footer-column footer-contact">
+        <h4>Contacto</h4>
+        {% if negocio.correo %}<a href="mailto:{{ negocio.correo }}">{{ icon('mail') }} {{ negocio.correo }}</a>{% endif %}
+        {% if negocio.whatsapp_url %}<a href="{{ negocio.whatsapp_url }}" target="_blank" rel="noopener noreferrer">{{ icon('phone') }} WhatsApp</a>{% endif %}
+        <a href="{{ url_for('contacto') }}">{{ icon('chat') }} Contanos tu proyecto</a>
+        {% if negocio.ubicacion %}<p>{{ icon('pin') }} {{ negocio.ubicacion }}</p>{% endif %}
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© {{ anio }} NovaLabs. Ideas que funcionan.</p><div class="footer-legal"><a href="{{ url_for('privacidad') }}">Uso de tus datos</a></div></div>
+  </footer>
+</div>
+{% endblock %}

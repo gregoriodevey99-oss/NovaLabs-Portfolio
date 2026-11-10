@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block title %}{{ producto.nombre }} · NovaLabs{% endblock %}
+{% block page %}
+<section class="page-container product-page">
+  <a class="back-link" href="{{ url_for('productos_pagina') }}">← Todos los productos</a>
+  <div class="product-hero">
+    <div>
+      <p class="eyebrow">{{ producto.nombre }} · SOLUCIONES A MEDIDA</p>
+      <h1>{{ producto.titulo }}</h1>
+      <p class="lead">{{ producto.descripcion }}</p>
+      <div class="action-row"><a class="btn-cta-blue" href="{{ url_for('demo',slug=slug) }}">Probar demostración {{ icon('arrow') }}</a><a class="btn-secondary" href="{{ url_for('contacto',servicio=slug) }}">Consultar por {{ producto.nombre }}</a></div>
+    </div>
+    <img class="product-image" src="{{ url_for('static',filename='img/'+producto.imagen) }}" alt="Presentación visual de {{ producto.nombre }}">
+  </div>
+  <div class="info-grid">
+    {% for titulo, texto in producto.funciones %}<article class="info-card"><span class="number">0{{ loop.index }}</span><h2>{{ titulo }}</h2><p>{{ texto }}</p></article>{% endfor %}
+  </div>
+  <div class="info-strip"><div><h2>Empecemos por lo que necesitás.</h2><p>Definimos las funciones, las integraciones, los tiempos y el presupuesto antes de desarrollar.</p></div><a class="btn-cta-blue" href="{{ url_for('contacto',servicio=slug) }}">Contar mi idea {{ icon('arrow') }}</a></div>
+</section>
+{% endblock %}

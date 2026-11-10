@@ -1,0 +1,41 @@
+NOVALABS PORTFOLIO — VERSION PUBLICA
+
+REQUISITOS
+- Python 3.11 o posterior.
+- Conexión a Internet para instalar Flask y Waitress.
+
+INICIAR EN WINDOWS
+1. Extraé la carpeta del proyecto.
+2. Hacé doble clic en INICIAR.bat.
+3. Esperá a que se instalen las dependencias.
+4. Abrí http://127.0.0.1:5000 en el navegador.
+5. Para detener el servidor, volvé a la terminal y presioná Ctrl+C.
+
+SI PREFERÍS LA TERMINAL
+Desde la carpeta del proyecto:
+    python -m venv .venv
+    .venv\Scripts\python.exe -m pip install -r requirements.txt
+    .venv\Scripts\python.exe app.py
+
+QUÉ INCLUYE
+- Página principal y navegación.
+- Secciones Soluciones, Nosotros y Contacto.
+- Presentación de NovaShop, NovaCore y Nova AI.
+- Demostraciones interactivas con datos ficticios.
+- Diseño adaptable a distintos tamaños de pantalla.
+
+ALCANCE
+Esta versión pública es un portfolio demostrativo.
+- No incluye gestión privada ni administración de consultas.
+- No recopila ni almacena consultas personales.
+- NovaShop no procesa pagos ni pedidos reales.
+- NovaCore guarda los cambios de ejemplo únicamente en el navegador.
+- Nova AI utiliza respuestas predefinidas y no se conecta a un modelo de IA.
+
+PRUEBAS
+    python -m unittest discover -s tests -v
+
+PUBLICACION
+Para alojar esta aplicación Flask en Internet se necesita un servicio compatible
+con Python y una configuración de despliegue adecuada. El repositorio de GitHub
+por sí solo almacena el código, pero no ejecuta la aplicación.

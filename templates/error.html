@@ -1,0 +1,3 @@
+{% extends "layout.html" %}
+{% block title %}{{ codigo }} · NovaLabs{% endblock %}
+{% block page %}<section class="page-container centered-page"><p class="eyebrow">NOVALABS · {{ codigo }}</p><h1>Vamos a intentarlo de nuevo.</h1><p class="lead">{{ mensaje }}</p><div class="action-row"><a class="btn-cta-blue" href="{{ url_for('inicio') }}">Ir al inicio</a><a class="btn-secondary" href="{{ url_for('contacto') }}">Abrir contacto</a></div></section>{% endblock %}

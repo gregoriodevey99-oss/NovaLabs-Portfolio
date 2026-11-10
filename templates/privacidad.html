@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block title %}Uso de tus datos · NovaLabs{% endblock %}
+{% block page %}
+<section class="page-container prose-page">
+  <p class="eyebrow">PORTFOLIO Y DEMOSTRACIONES</p>
+  <h1>Uso de datos.</h1>
+  <p>Esta versión pública de NovaLabs es una demostración de portfolio. No incluye un formulario que envíe consultas ni guarda datos personales en un servidor.</p>
+  <p>Las demostraciones de NovaShop y NovaCore pueden guardar el carrito o el inventario de ejemplo únicamente en el almacenamiento local del navegador. Nova AI utiliza respuestas predefinidas.</p>
+  <p>No ingreses contraseñas, datos de pago ni información personal en las demostraciones.</p>
+  <a class="btn-secondary" href="{{ url_for('inicio') }}">Volver al inicio</a>
+</section>
+{% endblock %}

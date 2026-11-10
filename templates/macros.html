@@ -1,0 +1,15 @@
+{% macro icon(name, extra="") -%}
+<svg class="icon {{ extra }}" aria-hidden="true" focusable="false"><use href="#icon-{{ name }}"></use></svg>
+{%- endmacro %}
+
+{% macro logo() -%}
+<span class="logo">
+  <svg class="logo-mark" viewBox="0 0 52 58" aria-hidden="true"><path d="m8 19 18-17 18 17" fill="none" stroke="#00d6f3" stroke-width="4.5"/><path d="m6 29 20-20 20 20-20 25Z" fill="none" stroke="#087dff" stroke-width="5"/><path d="m16 29 10-10 10 10-10 10Z" fill="none" stroke="#00d6f3" stroke-width="4"/><path d="m4 29 5-5m34 10 5-5" stroke="#020e1e" stroke-width="5"/></svg>
+  <span class="logo-copy"><strong>Nova<span>Labs</span></strong><span class="logo-sub">IDEAS QUE FUNCIONAN</span></span>
+</span>
+{%- endmacro %}
+
+{% macro feature(text) -%}
+<li><span class="check">{{ icon('check') }}</span><span>{{ text }}</span></li>
+{%- endmacro %}
+
