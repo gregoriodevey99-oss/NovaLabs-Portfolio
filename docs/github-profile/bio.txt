@@ -1,1 +1,1 @@
-Estudiante de programación y creador de NovaLabs. Proyectos con Python, Flask y JavaScript. NovaFinance: aplicaciones de finanzas personales en desarrollo.
+Estudio programación y aprendo creando proyectos web y aplicaciones. Trabajo con Python y JavaScript y busco dar mis primeros pasos como desarrollador.
