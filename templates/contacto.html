@@ -1,15 +1,13 @@
 {% extends "layout.html" %}
-{% block title %}Contacto · NovaLabs{% endblock %}
+{% block title %}Conectemos · NovaLabs{% endblock %}
 {% block page %}
-<section class="page-container centered-page">
-  <p class="eyebrow">HABLEMOS DE IDEAS</p>
-  <h1>¿Tenés un proyecto en mente?</h1>
-  <p class="lead">Esta versión pública de NovaLabs es una presentación de portfolio. No recopila ni almacena consultas desde este sitio.</p>
-  <div class="info-card">
-    <h2>Conocé el proyecto</h2>
-    <p>Podés ver el código público, revisar las tecnologías utilizadas y explorar los proyectos en GitHub.</p>
-    <a class="btn-cta-blue" href="https://github.com/gregoriodevey99-oss" target="_blank" rel="noopener noreferrer">Visitar mi perfil de GitHub {{ icon('arrow') }}</a>
+<section class="page-container contact-page">
+  <div class="page-heading"><p class="eyebrow">SIGAMOS CONECTADOS</p><h1>Las buenas ideas<br><span class="gradient-text">abren conversaciones.</span></h1><p class="lead">Soy Gregorio Devey. Si querés conocer mi recorrido, explorar el código o seguir los avances de NovaLabs, encontrame en estos espacios.</p></div>
+  <div class="contact-grid">
+    <article class="info-card contact-card">{{ icon('github') }}<h2>Mis proyectos en GitHub</h2><p>Presentación personal, código público y documentación de los proyectos que voy desarrollando.</p><a class="btn-cta-blue" href="https://github.com/gregoriodevey99-oss" target="_blank" rel="noopener noreferrer">Visitar mi perfil</a><a class="text-link" href="https://github.com/gregoriodevey99-oss/NovaLabs-Portfolio" target="_blank" rel="noopener noreferrer">Ver el código de NovaLabs</a></article>
+    {% if negocio.linkedin %}<article class="info-card contact-card">{{ icon('linkedin') }}<h2>Mi recorrido en LinkedIn</h2><p>Mi formación, proyectos y búsqueda de oportunidades para seguir creciendo en programación.</p><a class="btn-secondary" href="{{ negocio.linkedin }}" target="_blank" rel="noopener noreferrer">Conectar en LinkedIn</a></article>{% else %}<article class="info-card contact-card contact-about">{{ icon('grid') }}<h2>Conocé NovaLabs</h2><p>Una familia de proyectos personales que reúne desarrollo web, organización y aplicaciones de finanzas.</p><a class="btn-secondary" href="{{ url_for('nosotros') }}">Sobre el proyecto</a></article>{% endif %}
   </div>
-  <p class="muted small-note">Las demostraciones utilizan datos ficticios. No ingreses información personal.</p>
+  {% if negocio.correo %}<p class="contact-email">También podés escribirme a <a class="text-link" href="mailto:{{ negocio.correo }}">{{ negocio.correo }}</a>.</p>{% endif %}
+  <div class="contact-note"><span>{{ icon('pin') }}</span><p>{% if negocio.ubicacion %}{{ negocio.ubicacion }} · {% endif %}Esta página es parte de mi portfolio. Las consultas se realizan a través de los enlaces de contacto.</p></div>
 </section>
 {% endblock %}

@@ -35,14 +35,17 @@ def create_app(test_config=None):
     def producto(slug):
         if slug not in PRODUCTOS:
             abort(404)
+        plantilla = "novafinance.html" if slug == "novafinance" else "producto.html"
         return render_template(
-            "producto.html", producto=PRODUCTOS[slug], slug=slug, activo="productos"
+            plantilla, producto=PRODUCTOS[slug], slug=slug, activo="productos"
         )
 
     @app.get("/demos/<slug>")
     def demo(slug):
         if slug not in PRODUCTOS:
             abort(404)
+        if not PRODUCTOS[slug]["demo_disponible"]:
+            return redirect(url_for("producto", slug=slug, _anchor="versiones"))
         return render_template(
             "demo.html", producto=PRODUCTOS[slug], slug=slug, activo="productos"
         )

@@ -1,13 +1,12 @@
 {% extends "layout.html" %}
-{% block title %}Conocé NovaLabs{% endblock %}
+{% block title %}Sobre NovaLabs · Gregorio Devey{% endblock %}
 {% block page %}
-<section class="page-container">
-  <div class="page-heading"><p class="eyebrow">NOVALABS · IDEAS QUE FUNCIONAN</p><h1>De Hurlingham a tu próximo proyecto.</h1><p class="lead">NovaLabs es el proyecto de desarrollo de software de Gregorio. Un espacio para construir páginas, sistemas y automatizaciones junto a personas que quieren hacer crecer su negocio.</p></div>
-  <div class="info-grid">
-    <article class="info-card"><span class="number">01</span><h2>Conversamos</h2><p>Nos contás qué hacés, qué necesitás y qué te gustaría mejorar.</p></article>
-    <article class="info-card"><span class="number">02</span><h2>Definimos</h2><p>Ordenamos las prioridades y acordamos el alcance del trabajo, el presupuesto y las etapas.</p></article>
-    <article class="info-card"><span class="number">03</span><h2>Construimos</h2><p>Desarrollamos, revisamos con vos y preparamos la entrega para que puedas usar tu solución.</p></article>
-  </div>
-  <div class="info-strip"><div><h2>Trato directo. Ideas claras.</h2><p>Podemos empezar con una conversación sobre tu negocio.</p></div><a class="btn-cta-blue" href="{{ url_for('contacto') }}">Hablemos {{ icon('arrow') }}</a></div>
+<section class="page-container about-page">
+  <div class="page-heading"><p class="eyebrow">DETRÁS DE CADA IDEA</p><h1>Un proyecto personal.<br><span class="gradient-text">Muchas formas de aprender.</span></h1><p class="lead">Soy Gregorio Devey, estudiante de programación y creador de NovaLabs. Este es el espacio donde reúno mis proyectos de desarrollo web y aplicaciones.</p></div>
+  <div class="about-intro"><div class="creator-monogram" aria-hidden="true"><span>GD</span><div class="creator-orbit"></div></div><div><h2>Construir para entender.</h2><p>Me interesa transformar necesidades concretas en herramientas simples. En cada proyecto trabajo sobre la estructura, la interfaz y las funciones, y sigo aprendiendo a medida que lo desarrollo.</p><p>NovaLabs es la marca que une ese recorrido. NovaFinance, NovaShop, NovaCore y Nova AI exploran distintos problemas y tienen su propia etapa de desarrollo.</p><a class="text-link" href="https://github.com/gregoriodevey99-oss" target="_blank" rel="noopener noreferrer">Explorar mi perfil de GitHub</a></div></div>
+  <div class="section-intro secondary-intro"><div><p class="eyebrow">MI FORMA DE TRABAJAR</p><h2>Del problema a la experiencia.</h2></div></div>
+  <div class="info-grid"><article class="info-card">{{ icon('chat') }}<h3>Entender</h3><p>Identificar qué necesita resolver una herramienta y qué debería poder hacer quien la usa.</p></article><article class="info-card">{{ icon('grid') }}<h3>Construir</h3><p>Organizar el código y desarrollar interfaces que se puedan recorrer con claridad.</p></article><article class="info-card">{{ icon('check') }}<h3>Revisar y mejorar</h3><p>Probar las funciones, corregir problemas y documentar el alcance real de cada versión.</p></article></div>
+  <section class="technology-section" aria-labelledby="technology-title"><h2 id="technology-title">Tecnologías presentes en mis proyectos</h2><p>Herramientas con las que construyo y continúo aprendiendo.</p><ul class="technology-list"><li>Python</li><li>Flask</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>SQLite</li><li>React Native</li><li>Expo</li><li>Git y GitHub</li></ul></section>
+  <div class="info-strip"><div><h2>Conocé el trabajo detrás de las ideas.</h2><p>Los proyectos muestran sus funciones, tecnologías y estado actual.</p></div><a class="btn-cta-blue" href="{{ url_for('productos_pagina') }}">Ver los proyectos</a></div>
 </section>
 {% endblock %}

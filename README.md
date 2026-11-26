@@ -1,118 +1,159 @@
-# 🚀 NovaLabs
+# NovaLabs · Portfolio de Gregorio Devey
 
-### Soluciones digitales para un futuro más simple, inteligente y conectado.
+**Un proyecto personal para aprender, construir y compartir software.**
 
-NovaLabs es un proyecto de desarrollo web creado para presentar una agencia de soluciones digitales. Reúne una página institucional, páginas de producto y demostraciones interactivas de distintas ideas de software.
+Soy **Gregorio Devey**, estudiante de programación y desarrollador en formación. NovaLabs reúne mis proyectos de desarrollo web y aplicaciones: es el espacio donde convierto ideas en interfaces, practico programación y documento lo que voy construyendo.
 
-El proyecto está desarrollado con Python y Flask, junto con HTML, CSS y JavaScript.
+Este repositorio contiene el **sitio público de NovaLabs**, desarrollado con **Python, Flask, HTML, CSS y JavaScript**. Incluye presentaciones de proyectos y demostraciones que se pueden explorar al ejecutar el sitio.
 
-## 🖥️ Vista previa
+[Proyectos](#proyectos-del-ecosistema) · [Cómo ejecutarlo](#ejecutar-localmente) · [Caso NovaFinance](docs/novafinance.md) · [Sobre el autor](#autor)
 
-![Vista previa de la página principal de NovaLabs](vista_escritorio.png)
+## Vista previa
 
-## ✨ Qué incluye
+![Vista de escritorio del sitio de NovaLabs, portfolio personal de Gregorio Devey.](docs/images/novalabs-home.jpg)
 
-- Sitio web adaptable a computadoras y celulares.
-- Navegación entre Inicio, Soluciones, Nosotros y Contacto.
-- Páginas de presentación para tres productos.
-- Demostraciones interactivas con datos ficticios.
-- Diseño visual propio, tipografías locales e imágenes de producto.
-- Páginas informativas y manejo de errores.
+La identidad principal de NovaLabs usa tonos azules y violetas. **NovaFinance** tiene un acento verde para distinguir su propuesta de finanzas personales dentro del mismo proyecto.
 
-## 🧩 Productos y demostraciones
+## Proyectos del ecosistema
 
-### 🛒 NovaShop
-Demostración de una tienda online con catálogo, búsqueda, carrito y simulación de pedido. Los productos y precios son ficticios; no se procesan pagos ni se envían pedidos reales.
+| Proyecto | Qué presenta | Estado y alcance |
+| --- | --- | --- |
+| **NovaFinance** | Una línea de aplicaciones para organizar las finanzas personales. | Versión Windows funcional de manera local; versión móvil en desarrollo, probada con datos de demostración en Expo Go. La publicación en la nube y la sincronización están pendientes. |
+| **NovaShop** | Una tienda de ejemplo con catálogo, búsqueda, carrito y simulación de pedido. | Demostración interactiva con productos y precios ficticios. No procesa cobros ni envía pedidos reales. |
+| **NovaCore** | Un inventario de ejemplo con altas, búsqueda y ajuste de stock. | Demostración interactiva. Los cambios se guardan en el navegador; no es un sistema multiusuario. |
+| **Nova AI · ADAM** | Un recorrido guiado de asistente con opciones y respuestas predefinidas. | Demostración de interfaz y flujo de conversación. No está conectada a un modelo de inteligencia artificial. |
 
-### ⚙️ NovaCore
-Demostración de inventario con altas, búsqueda y ajuste de stock. Los cambios de ejemplo se guardan únicamente en el almacenamiento local del navegador; no forman un sistema multiusuario.
+**NovaLabs es el proyecto principal; NovaFinance es uno de sus productos.** Este repositorio presenta NovaFinance y documenta su estado. El código de las aplicaciones de finanzas no está incluido aquí.
 
-### 🤖 Nova AI
-Recorrido guiado de ADAM, un asistente de ejemplo con opciones y respuestas predefinidas. No está conectado a un modelo de inteligencia artificial.
+→ [Leer el caso de NovaFinance: propósito, tecnologías y próximos pasos](docs/novafinance.md)
 
-## 🛠️ Tecnologías
+### NovaFinance en pantalla
 
-- **Python 3.11+**
-- **Flask**
-- **Waitress**
-- **HTML5**
-- **CSS3**
-- **JavaScript**
+![Vista de NovaFinance para Windows, ejecutada localmente con datos de demostración.](static/img/novafinance-desktop.jpg)
 
-## 📂 Estructura
+*NovaFinance para Windows · datos de demostración*
 
-```text
-NovaLabs-Portfolio/
-├── app.py
-├── catalogo.py
-├── requirements.txt
-├── README.md
-├── LEEME.txt
-├── INICIAR.bat
-├── static/
-│   ├── css/
-│   ├── fonts/
-│   ├── img/
-│   └── js/
-├── templates/
-└── tests/
-```
+### Galería de demostraciones
 
-## 🚀 Ejecutar localmente
+<details>
+<summary>Ver capturas de NovaShop, NovaCore y Nova AI</summary>
 
-### Requisitos
-- Python 3.11 o posterior.
-- Conexión a Internet para instalar las dependencias.
+| NovaShop | NovaCore | Nova AI · ADAM |
+| --- | --- | --- |
+| [![Demostración de NovaShop con catálogo y carrito de ejemplo.](docs/images/novashop-demo.jpg)](docs/images/novashop-demo.jpg) | [![Demostración de NovaCore con inventario de ejemplo.](docs/images/novacore-demo.jpg)](docs/images/novacore-demo.jpg) | [![Demostración de ADAM con opciones de conversación predefinidas.](docs/images/nova-ai-demo.jpg)](docs/images/nova-ai-demo.jpg) |
+| Tienda de ejemplo. Sin pagos ni pedidos reales. | Inventario de ejemplo. Los cambios se guardan en el navegador. | Recorrido con respuestas predefinidas. Sin conexión a un modelo de IA. |
 
-### 1. Clonar el repositorio
+Las capturas muestran las demostraciones incluidas en este portfolio. Seleccioná una imagen para verla completa.
+
+</details>
+
+## Qué muestra este portfolio
+
+- **Desarrollo web con Flask:** rutas, plantillas y páginas de producto.
+- **Diseño adaptable:** una experiencia pensada para escritorio y celular.
+- **Interacciones con JavaScript:** catálogo, carrito, inventario y recorrido guiado.
+- **Organización del proyecto:** separación entre aplicación, catálogo, plantillas y recursos estáticos.
+- **Documentación del alcance:** qué funciona, qué es una demostración y qué queda por desarrollar.
+
+## Tecnologías de este repositorio
+
+| Parte | Tecnologías |
+| --- | --- |
+| Aplicación web | Python 3.11+, Flask |
+| Servidor local | Waitress |
+| Interfaz | HTML, CSS, JavaScript |
+| Recursos | Tipografías locales e imágenes del proyecto |
+| Pruebas del sitio | `unittest` |
+
+SQLite corresponde a la aplicación local de NovaFinance; React Native y Expo, a su versión móvil. Esas tecnologías se describen en el [caso del producto](docs/novafinance.md) y no son dependencias de este sitio.
+
+## Ejecutar localmente
+
+Necesitás **Python 3.11 o posterior** y conexión a Internet para instalar las dependencias.
+
+### 1. Descargar el proyecto
 
 ```bash
 git clone https://github.com/gregoriodevey99-oss/NovaLabs-Portfolio.git
 cd NovaLabs-Portfolio
 ```
 
-### 2. Crear un entorno virtual
+### 2. Preparar el entorno e iniciar el sitio
 
-En Windows:
+**Windows · PowerShell**
 
 ```powershell
 python -m venv .venv
-```
-
-### 3. Instalar las dependencias
-
-```powershell
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-```
-
-### 4. Iniciar el sitio
-
-```powershell
 .\.venv\Scripts\python.exe app.py
 ```
 
-Abrí [http://127.0.0.1:5000](http://127.0.0.1:5000) en el navegador.
+También podés hacer doble clic en `INICIAR.bat`.
 
-También podés iniciar el proyecto haciendo doble clic en `INICIAR.bat`.
-
-## 🧪 Pruebas
+**macOS o Linux**
 
 ```bash
-python -m unittest discover -s tests -v
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python app.py
 ```
 
-## 🔒 Alcance de esta versión pública
+### 3. Abrir el portfolio
 
-Este repositorio contiene únicamente la presentación pública y las demostraciones de NovaLabs. No incluye gestión de consultas ni almacenamiento de datos personales en un servidor.
+Con el servidor iniciado, abrí **[http://127.0.0.1:5000](http://127.0.0.1:5000)**. Para detenerlo, presioná `Ctrl+C` en la terminal.
 
-NovaShop y NovaCore pueden guardar el carrito o el inventario de ejemplo en el almacenamiento local del navegador. Las demostraciones usan información ficticia. No ingreses datos personales, contraseñas ni información de pago.
+| Página | Ruta local |
+| --- | --- |
+| Inicio | `/` |
+| Presentación de NovaFinance | `/productos/novafinance` |
+| Presentación de NovaShop | `/productos/novashop` |
+| Presentación de NovaCore | `/productos/novacore` |
+| Presentación de Nova AI | `/productos/nova-ai` |
+| Demostración de tienda | `/demos/novashop` |
+| Demostración de inventario | `/demos/novacore` |
+| Recorrido de ADAM | `/demos/nova-ai` |
 
-## 👨‍💻 Autor
+La página de NovaFinance es una presentación del producto y su avance. No ejecuta la aplicación financiera de Windows ni la versión móvil.
 
-**Gregorio Devey**
+## Estructura
 
-Proyecto personal de desarrollo web y portfolio de programación.
+| Ubicación | Contenido |
+| --- | --- |
+| `app.py` | Aplicación Flask y rutas. |
+| `catalogo.py` | Información pública de los proyectos y configuración del sitio. |
+| `templates/` | Plantillas de las páginas. |
+| `static/css/` | Estilos visuales y adaptaciones de la interfaz. |
+| `static/js/` | Interacciones del sitio y de las demostraciones. |
+| `static/img/` | Imágenes e identidad visual. |
+| `docs/` | Documentación de proyectos y casos de desarrollo. |
+| `tests/` | Pruebas del sitio. |
 
----
+## Pruebas
 
-**NovaLabs — Ideas que funcionan.**
+Con las dependencias instaladas, podés ejecutar las pruebas existentes.
+
+**Windows:**
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+```
+
+**macOS o Linux:**
+
+```bash
+.venv/bin/python -m unittest discover -s tests -v
+```
+
+## Alcance de la versión pública
+
+El sitio es un **portfolio personal con demostraciones**. No incluye administración privada, gestión de consultas ni almacenamiento de datos personales en un servidor.
+
+NovaShop y NovaCore pueden guardar información de ejemplo en el almacenamiento local del navegador. Las demostraciones están pensadas para datos ficticios.
+
+El repositorio de GitHub almacena el código. Para que este sitio Flask funcione en Internet necesita un servicio compatible con Python y una configuración de despliegue. Las direcciones de esta guía son locales.
+
+## Autor
+
+**Gregorio Devey** · Estudiante de programación y creador de NovaLabs.
+
+[Perfil de GitHub](https://github.com/gregoriodevey99-oss) · [LinkedIn](https://www.linkedin.com/in/gregorio-devey/)

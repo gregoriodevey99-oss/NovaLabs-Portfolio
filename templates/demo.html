@@ -2,22 +2,22 @@
 {% block title %}Demo de {{ producto.nombre }} · NovaLabs{% endblock %}
 {% block page %}
 <section class="page-container demo-page" data-demo="{{ slug }}">
-  <a class="back-link" href="{{ url_for('producto',slug=slug) }}">← Conocer {{ producto.nombre }}</a>
+  <a class="back-link" href="{{ url_for('producto',slug=slug) }}">Conocer {{ producto.nombre }}</a>
   <div class="page-heading"><p class="eyebrow">DEMOSTRACIÓN INTERACTIVA</p><h1>{{ producto.nombre }} en acción.</h1><p class="lead">{{ producto.demo }}</p></div>
   <p id="demo-status" class="notice" role="status" hidden></p>
   <noscript><p class="notice">Activá JavaScript en el navegador para probar esta demostración.</p></noscript>
   {% if slug=='novashop' %}
   <div class="demo-toolbar"><div class="field"><label for="shop-search">Buscar productos</label><input id="shop-search" type="search" placeholder="Remera, mochila, taza…"></div><button type="button" class="btn-secondary" id="shop-reset">Vaciar carrito</button></div>
-  <div class="shop-layout"><div class="shop-grid" id="shop-products"></div><aside class="form-panel cart-panel"><h2>Tu carrito <span id="cart-count">0</span></h2><div id="cart-items"></div><p class="cart-total">Total <strong id="cart-total">$ 0</strong></p><button id="shop-checkout" class="btn-cta-blue" type="button" disabled>Simular pedido {{ icon('arrow') }}</button><p class="muted small-note">Productos e importes de demostración.</p></aside></div>
+  <div class="shop-layout"><div class="shop-grid" id="shop-products"></div><aside class="form-panel cart-panel"><h2>Tu carrito <span id="cart-count">0</span></h2><div id="cart-items"></div><p class="cart-total">Total <strong id="cart-total">$ 0</strong></p><button id="shop-checkout" class="btn-cta-blue" type="button" disabled>Simular pedido</button><p class="muted small-note">Productos e importes de demostración.</p></aside></div>
   {% elif slug=='novacore' %}
   <div class="info-grid compact-grid"><div class="info-card"><span class="metric" id="core-products">0</span><span>Productos</span></div><div class="info-card"><span class="metric" id="core-units">0</span><span>Unidades</span></div><div class="info-card"><span class="metric" id="core-low">0</span><span>Con stock bajo</span></div></div>
   <form id="inventory-form" class="filter-bar"><div class="field"><label for="item-name">Producto</label><input id="item-name" minlength="2" maxlength="60" required placeholder="Nombre del producto"></div><div class="field"><label for="item-stock">Stock inicial</label><input id="item-stock" type="number" min="0" max="9999" step="1" value="1" required></div><button class="btn-cta-blue" type="submit">Agregar producto</button></form>
   <div class="demo-toolbar"><div class="field"><label for="core-search">Buscar en inventario</label><input id="core-search" type="search" placeholder="Nombre del producto"></div><button class="btn-secondary" type="button" id="core-reset">Restablecer ejemplo</button></div>
   <div class="table-wrap"><table><caption class="sr-only">Inventario de demostración</caption><thead><tr><th>Producto</th><th>Unidades</th><th>Stock</th><th>Acciones</th></tr></thead><tbody id="inventory-rows"></tbody></table></div>
-  {% else %}
+  {% elif slug=='nova-ai' %}
   <div class="chat-layout"><aside class="info-card"><div class="icon-circle cyan">{{ icon('brain') }}</div><h2>Conocé a ADAM</h2><p>Elegí una opción para descubrir qué tipo de solución podría servirte.</p><p class="muted small-note">Respuestas predefinidas para esta demo. No uses datos personales.</p><button class="btn-secondary" id="chat-reset" type="button">Reiniciar conversación</button></aside><div class="form-panel chat-panel"><div id="chat-messages" class="chat-messages" role="log" aria-live="polite" aria-label="Conversación con ADAM"></div><div id="chat-options" class="chat-options"></div></div></div>
   {% endif %}
-  <div class="info-strip"><div><h2>Imaginá esta idea en tu negocio.</h2><p>Podemos definir juntos las funciones que necesitás.</p></div><a class="btn-cta-blue" href="{{ url_for('contacto',servicio=slug) }}">Consultar por {{ producto.nombre }} {{ icon('arrow') }}</a></div>
+  <div class="info-strip"><div><h2>Conocé cómo está construido.</h2><p>Explorá el proyecto en GitHub o contactá a su creador.</p></div><a class="btn-cta-blue" href="{{ url_for('contacto') }}">Contactar a Gregorio</a></div>
 </section>
 {% endblock %}
 {% block scripts %}<script src="{{ url_for('static',filename='js/demos.js') }}" defer></script>{% endblock %}

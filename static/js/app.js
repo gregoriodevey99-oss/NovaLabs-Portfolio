@@ -1,19 +1,36 @@
 "use strict";
-// La validación y el guardado también se realizan en Python; el formulario funciona sin JS.
-document.querySelectorAll('[data-submit-form]').forEach(form => {
-  form.addEventListener('submit', () => {
-    const button = form.querySelector('button[type="submit"]');
-    if (button && form.checkValidity()) {
-      button.dataset.original = button.textContent;
-      button.disabled = true;
-      button.textContent = button.dataset.pending || 'Enviando…';
+
+const navigation = document.querySelector('#main-navigation');
+const menuToggle = document.querySelector('.menu-toggle');
+const compactNavigation = window.matchMedia('(max-width: 900px)');
+
+if (navigation && menuToggle) {
+  menuToggle.hidden = false;
+  document.documentElement.classList.add('navigation-ready');
+  const closeMenu = () => {
+    menuToggle.setAttribute('aria-expanded', 'false');
+    navigation.classList.remove('is-open');
+    const label = menuToggle.querySelector('.menu-label');
+    if (label) label.textContent = 'Menú';
+  };
+  menuToggle.addEventListener('click', () => {
+    const open = menuToggle.getAttribute('aria-expanded') !== 'true';
+    menuToggle.setAttribute('aria-expanded', String(open));
+    navigation.classList.toggle('is-open', open);
+    const label = menuToggle.querySelector('.menu-label');
+    if (label) label.textContent = open ? 'Cerrar' : 'Menú';
+  });
+  navigation.addEventListener('click', (event) => {
+    if (event.target.closest('a')) closeMenu();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+      closeMenu();
+      menuToggle.focus();
     }
   });
-});
-window.addEventListener('pageshow', () => {
-  document.querySelectorAll('[data-original]').forEach(button => {
-    button.disabled = false;
-    button.textContent = button.dataset.original;
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('.nav-container')) closeMenu();
   });
-});
-document.querySelector('[data-error-summary]')?.focus();
+  compactNavigation.addEventListener('change', closeMenu);
+}

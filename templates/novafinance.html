@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block title %}NovaFinance · Tus finanzas, con más claridad · NovaLabs{% endblock %}
+{% block description %}Conocé NovaFinance, un producto de NovaLabs para organizar movimientos, presupuestos y metas. Windows local y una versión móvil en desarrollo.{% endblock %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='css/finance.css') }}?v=2">{% endblock %}
+{% block page %}
+<article class="finance-page">
+  <section class="page-container finance-hero">
+    <a class="back-link" href="{{ url_for('productos_pagina') }}">Todos los productos</a>
+    <div class="finance-intro">
+      <div>
+        <p class="eyebrow finance-eyebrow">NOVAFINANCE · UN PRODUCTO DE NOVALABS</p>
+        <h1>Tu dinero.<br><span>Más claro.</span></h1>
+        <p class="lead">Una herramienta para ordenar tus movimientos, darles lugar a tus objetivos y entender mejor tu día a día.</p>
+        <p class="finance-hero-note">Versión local para Windows · Experiencia móvil en desarrollo</p>
+        <div class="action-row"><a class="btn-finance" href="#vistas">Ver la interfaz</a><a class="btn-secondary" href="#versiones">Conocer las versiones</a></div>
+      </div>
+      <div class="finance-overview" aria-label="Qué podés organizar con NovaFinance">
+        <div class="finance-app-mark">{{ icon('wallet') }}<span>NovaFinance<small>BY NOVALABS</small></span></div>
+        <p class="finance-overview-title">Un lugar para ver el conjunto.</p>
+        <ul class="finance-scope-list"><li><span>Movimientos</span>Ingresos y gastos</li><li><span>Presupuestos</span>Planificación por categoría</li><li><span>Metas</span>Objetivos de ahorro</li><li><span>Cuentas</span>Saldos e informes</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-container finance-gallery" id="vistas" aria-labelledby="finance-vistas-title">
+    <div class="finance-section-heading"><p class="eyebrow">UNA MIRADA AL PROYECTO</p><h2 id="finance-vistas-title">Así se ve NovaFinance.</h2><p>Interfaces del proyecto con datos ficticios, preparadas para mostrar cómo se organiza la información.</p></div>
+    <div class="finance-screens">
+      <figure class="finance-desktop-figure"><div class="finance-window-bar"><span>NovaFinance para Windows</span><span>Vista local</span></div><a href="{{ url_for('static',filename='img/novafinance-desktop.jpg') }}" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura de NovaFinance para Windows"><img src="{{ url_for('static',filename='img/novafinance-desktop.jpg') }}" alt="Resumen de NovaFinance para Windows con balance, ingresos y gastos ficticios de una cuenta de demostración" width="1348" height="926" decoding="async"></a><figcaption>Interfaz de la aplicación para Windows · datos de demostración.</figcaption></figure>
+      <figure class="finance-mobile-figure"><div class="finance-phone"><div class="finance-mobile-crop"><img src="{{ url_for('static',filename='img/novafinance-mobile-web.jpg') }}" alt="Inicio de NovaFinance Móvil con saldo y movimientos ficticios, versión en desarrollo" width="390" height="844" loading="lazy" decoding="async"></div></div><figcaption>Prototipo móvil con datos de ejemplo.<br>Vista web de la interfaz React Native.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="page-container" aria-labelledby="finance-funciones-title">
+    <div class="finance-section-heading"><p class="eyebrow">ORGANIZACIÓN COTIDIANA</p><h2 id="finance-funciones-title">De los movimientos a tus objetivos.</h2></div>
+    <div class="finance-feature-grid">
+      <article class="info-card"><div class="finance-feature-icon">{{ icon('wallet') }}</div><h3>Movimientos al día</h3><p>Ingresos, gastos y transferencias organizados por cuenta y categoría. Buscá registros y revisá tu actividad.</p></article>
+      <article class="info-card"><div class="finance-feature-icon">{{ icon('grid') }}</div><h3>Presupuestos claros</h3><p>Definí límites por categoría y comparalos con los gastos registrados durante el mes.</p></article>
+      <article class="info-card"><div class="finance-feature-icon">{{ icon('bolt') }}</div><h3>Metas con seguimiento</h3><p>Creá objetivos de ahorro y registrá aportes para ver cómo avanza cada uno.</p></article>
+      <article class="info-card"><div class="finance-feature-icon">{{ icon('chart') }}</div><h3>Tu información a mano</h3><p>La versión para Windows reúne cuentas, estadísticas e informes, con exportación CSV y opciones de impresión.</p></article>
+    </div>
+  </section>
+
+  <section class="page-container finance-versions" id="versiones" aria-labelledby="finance-versiones-title">
+    <div class="finance-section-heading"><p class="eyebrow">ESTADO DEL PROYECTO</p><h2 id="finance-versiones-title">Dos experiencias. Una misma idea.</h2><p>La versión de escritorio y la móvil avanzan por separado, dentro de la familia NovaLabs.</p></div>
+    <div class="finance-version-grid">
+      <article class="finance-version-card"><p class="finance-version-label">PARA COMPUTADORA</p><h3>NovaFinance Windows</h3><span class="finance-status">Versión funcional local</span><p>La aplicación se ejecuta en la computadora y guarda allí la información. Incluye movimientos, cuentas, presupuestos, metas e informes.</p><p class="finance-version-detail">Interfaz clara y oscura · Uso local</p></article>
+      <article class="finance-version-card"><p class="finance-version-label">PARA CELULAR</p><h3>NovaFinance Móvil</h3><span class="finance-status finance-status-development">En desarrollo</span><p>Prototipo probado mediante Expo Go, con Inicio, Movimientos, Presupuestos y Metas. La demostración usa datos de ejemplo y permite elegir un tema claro u oscuro.</p><p class="finance-version-detail">Prototipo · Sin instalador público por ahora</p></article>
+    </div>
+    <div class="finance-next"><div><p class="eyebrow">PRÓXIMOS PASOS</p><h3>Conectar las experiencias.</h3></div><p>La publicación en la nube y la sincronización entre Windows y el celular siguen en preparación. Hoy las dos versiones funcionan de manera independiente.</p></div>
+  </section>
+
+  <section class="page-container finance-author"><div><p class="eyebrow">DETRÁS DEL PROYECTO</p><h2>Creado por Gregorio Devey.<br>Parte de NovaLabs.</h2><p>Un proyecto personal para seguir aprendiendo y convertir una necesidad cotidiana en una herramienta concreta.</p></div><div class="action-row"><a class="btn-cta-blue" href="https://github.com/gregoriodevey99-oss/NovaLabs-Portfolio/blob/main/docs/novafinance.md" target="_blank" rel="noopener noreferrer">Leer sobre el proyecto</a><a class="btn-secondary" href="{{ url_for('contacto') }}">Contactar a Gregorio</a></div></section>
+</article>
+{% endblock %}
